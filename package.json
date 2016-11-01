@@ -21,7 +21,7 @@
   "repository": "tachyons-css/tachyons-base",
   "license": "MIT",
   "devDependencies": {
-    "tachyons-cli": "^0.6.1"
+    "tachyons-cli": "^1.0.9"
   },
   "scripts": {
     "start": "tachyons src/tachyons-outlines.css > css/tachyons-outlines.css && tachyons src/tachyons-outlines.css --minify > css/tachyons-outlines.min.css && tachyons src/tachyons-outlines.css --generate-docs --package=../../package.json > readme.md"
