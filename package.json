@@ -21,12 +21,15 @@
   "repository": "tachyons-css/tachyons-base",
   "license": "MIT",
   "devDependencies": {
-    "tachyons-cli": "^1.0.11"
+    "tachyons-cli": "^1.0.11",
+    "watch": "^1.0.2"
   },
   "scripts": {
-    "start": "tachyons src/tachyons-outlines.css > css/tachyons-outlines.css && tachyons src/tachyons-outlines.css --minify > css/tachyons-outlines.min.css && tachyons src/tachyons-outlines.css --generate-docs --package=../../package.json > readme.md"
-  },
-  "dependencies": {
-    "watch": "^1.0.2"
+    "start": "npm run build:watch",
+    "build:css": "tachyons src/tachyons-outlines.css > css/tachyons-outlines.css",
+    "build:minify": "tachyons src/tachyons-outlines.css --minify > css/tachyons-outlines.min.css",
+    "build:docs": "tachyons src/tachyons-outlines.css --generate-docs --package=../../package.json > readme.md",
+    "build": "npm run build:css && npm run build:minify && npm run build:docs",
+    "build:watch": "watch 'npm run build' ./src"
   }
 }
